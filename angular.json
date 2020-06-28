@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "agl"
+    }
+  },
+  "defaultProject": "agl",
+  "cli": {
+    "analytics": false
+  }
 }
