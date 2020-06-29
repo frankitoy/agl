@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ApplicationActions } from './store/application.actions';
 
 @Component({
-  selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'agl-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'agl';
+export class AppComponent implements OnInit {
+
+  constructor(private store: Store) { }
+
+  public ngOnInit(): void {
+    this.store.dispatch(ApplicationActions.fetchApplication());
+  }
 }
