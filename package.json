@@ -1,6 +1,15 @@
 {
   "name": "agl",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Franklin Marcelo",
+  "email": "frankitoy@gmail.com",
+  "description": "angular",
+  "homepage": "https://github.com/frankitoy/agl",
+  "repository": "https://github.com/frankitoy/agl.git",
+  "keywords": [
+    "angular"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=1234 --open",

@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+} from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'agl-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 

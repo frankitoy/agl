@@ -1,0 +1,50 @@
+import {
+  Action,
+  createReducer,
+  on,
+} from '@ngrx/store';
+import {
+  enableES5,
+  produce,
+} from 'immer';
+import { ApplicationActions } from './application.actions';
+import { ApplicationState } from './application.state';
+
+export const applicationInitialState: ApplicationState = {
+  application: null,
+  isSyncing: false,
+};
+
+const _applicationReducer = createReducer(
+  applicationInitialState,
+
+  on(
+    ApplicationActions.fetchApplication,
+    state => {
+      state.isSyncing = true;
+      return state;
+    },
+  ),
+
+  on(
+    ApplicationActions.fetchApplicationSuccess,
+    (state, { application }) => {
+      state.application = application;
+      state.isSyncing = false;
+      return state;
+    },
+  ),
+
+  on(
+    ApplicationActions.fetchApplicationError,
+    state => {
+      state.isSyncing = false;
+      return state;
+    },
+  ),
+);
+
+export function applicationReducer(state: ApplicationState, action: Action): ApplicationState {
+  enableES5();
+  return produce(state, draft => _applicationReducer(draft, action));
+}

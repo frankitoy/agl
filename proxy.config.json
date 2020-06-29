@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://agl-developer-test.azurewebsites.net/people.json",
+    "target": "http://agl-developer-test.azurewebsites.net",
     "secure": false,
     "logLevel": "debug"
   }
