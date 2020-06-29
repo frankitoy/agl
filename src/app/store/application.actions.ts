@@ -8,7 +8,7 @@ const fetchApplication = createAction('[application][fetch]');
 
 const fetchApplicationSuccess = createAction(
   '[application][fetch][success]',
-  props<{ application: Application }>(),
+  props<{ applications: Array<Application> }>(),
 );
 
 const fetchApplicationError = createAction('[application][fetch][error]');

@@ -21,7 +21,7 @@ export class ApplicationEffects {
   public fetchApplication$ = createEffect(() => this.actions$.pipe(
     ofType(ApplicationActions.fetchApplication),
     switchMap(() => this.applicationService.getPets()),
-    switchMap(application => of(ApplicationActions.fetchApplicationSuccess({ application }))),
+    switchMap(applications => of(ApplicationActions.fetchApplicationSuccess({ applications }))),
     catchError(() => of(ApplicationActions.fetchApplicationError())),
   ));
 

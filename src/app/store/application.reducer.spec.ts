@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { mockApplication } from '../mocks/index';
 import { ApplicationActions } from './application.actions';
 import {
   applicationInitialState,
@@ -36,9 +37,9 @@ describe('ApplicationReducer', () => {
   Object.keys(successActions).forEach(actionName => {
     describe(`when ${actionName}`, () => {
       it('should set isSyncing to false and set application', () => {
-        const application = { id: '123' };
-        reducer(successActions[actionName]({ application }));
-        expect(state.application).toEqual(application);
+        const applications = mockApplication;
+        reducer(successActions[actionName]({ applications }));
+        expect(state.applications).toEqual(applications);
         expect(state.isSyncing).toEqual(false);
       });
     });

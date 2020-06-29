@@ -4,21 +4,17 @@ import {
   Observable,
   of,
 } from 'rxjs';
-import {
-  catchError,
-  retryWhen,
-} from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Application } from '../models/index';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ApplicationService {
 
-  private readonly url = 'http://agl-developer-test.azurewebsites.net/people.json';
+  constructor(private readonly httpClient: HttpClient) { }
 
-  constructor(protected httpClient: HttpClient) { }
-
-  public getPets(): Observable<any> {
-    return this.httpClient.get<Application>(this.url).pipe(
+  public getPets(): Observable<Array<Application>> {
+    return this.httpClient.get<Array<Application>>(environment.url).pipe(
       catchError(error => of(error)),
     );
   }

@@ -8,6 +8,10 @@ import {
   MockStore,
   provideMockStore,
 } from '@ngrx/store/testing';
+import { Subject } from 'rxjs';
+import { mockApplication } from '../mocks/index';
+import { Application } from '../models/application.model';
+import { ApplicationService } from '../services/application.service';
 import { ApplicationActions } from './application.actions';
 import { ApplicationEffects } from './application.effects';
 import {
@@ -18,12 +22,6 @@ import {
   applicationFeatureKey,
   ApplicationSelectors,
 } from './application.selectors';
-
-import Spy = jasmine.Spy;
-import { mockApplication } from '../mocks/index';
-import { ApplicationService } from '../services/application.service';
-import { Subject } from 'rxjs';
-import { Application } from '../models/application.model';
 
 describe(ApplicationEffects.name, () => {
 
@@ -41,7 +39,9 @@ describe(ApplicationEffects.name, () => {
         testData.actionSubject$.next(ApplicationActions.fetchApplication());
 
         expect(testData.actions$Spy).toHaveBeenCalledWith(ApplicationActions.fetchApplicationSuccess(
-          { application: mockApplication[0] }
+          {
+            applications: mockApplication,
+          }
         ));
       });
     });
@@ -61,7 +61,7 @@ describe(ApplicationEffects.name, () => {
 
   function mockTestBed(): void {
     const actionSubject$: Subject<Action> = new Subject();
-    const applicationResponseSubject$: Subject<Application> = new Subject();
+    const applicationResponseSubject$: Subject<Array<Application>> = new Subject();
     applicationServiceMockObj = jasmine.createSpyObj<ApplicationService>([
       'getPets',
     ]);
@@ -95,6 +95,6 @@ describe(ApplicationEffects.name, () => {
       applicationResponseSubject$,
     };
     const mockStore = TestBed.inject(MockStore);
-    mockStore.overrideSelector(ApplicationSelectors.application, mockApplication[0]);
+    mockStore.overrideSelector(ApplicationSelectors.applications, mockApplication);
   }
 });

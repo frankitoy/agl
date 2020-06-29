@@ -1,6 +1,6 @@
 import { Application } from '../models/index';
 
 export interface ApplicationState {
-  application: Application;
+  applications: Array<Application>;
   isSyncing: boolean;
 }

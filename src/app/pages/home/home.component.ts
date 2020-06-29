@@ -1,19 +1,20 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnInit,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ApplicationSelectors } from 'src/app/store/application.selectors';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'agl-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  public readonly application$ = this.store.select(ApplicationSelectors.applications);
+  public readonly isSyncing$ = this.store.select(ApplicationSelectors.isSyncing);
 
-  ngOnInit(): void {
-  }
+  constructor(private readonly store: Store) { }
 
 }

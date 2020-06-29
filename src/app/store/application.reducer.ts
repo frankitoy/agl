@@ -11,7 +11,7 @@ import { ApplicationActions } from './application.actions';
 import { ApplicationState } from './application.state';
 
 export const applicationInitialState: ApplicationState = {
-  application: null,
+  applications: null,
   isSyncing: false,
 };
 
@@ -29,8 +29,8 @@ const _applicationReducer = createReducer(
 
   on(
     ApplicationActions.fetchApplicationSuccess,
-    (state, { application }) => {
-      state.application = application;
+    (state, { applications }) => {
+      state.applications = applications;
       state.isSyncing = false;
       return state;
     },

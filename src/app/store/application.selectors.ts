@@ -15,16 +15,16 @@ import { ApplicationState } from './application.state';
 export const applicationFeatureKey = 'application';
 
 const applicationFeature = createFeatureSelector<ApplicationState>(applicationFeatureKey);
-const application = createSelector(applicationFeature, applicationState => applicationState?.application);
+const applications = createSelector(applicationFeature, applicationState => applicationState?.applications);
 const isSyncing = createSelector(applicationFeature, applicationState => applicationState?.isSyncing);
 
 const applicationPipe = pipe(
-  select(application),
-  filter<Application>(not(isNil)),
+  select(applications),
+  filter<Array<Application>>(not(isNil)),
 );
 
 export const ApplicationSelectors = {
-  application,
+  applications,
   applicationFeature,
   applicationPipe,
   isSyncing,

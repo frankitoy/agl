@@ -1,24 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { HomeRoutingModule } from './home-routing.module';
+import { FilterPipe } from 'src/app/pipes/filter.pipe';
+import { FilterPetsPipe } from 'src/app/pipes/filter-pets.pipe';
 import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
-    HttpClientModule,
-    RouterModule,
-  ],
-  providers: [
   ],
   declarations: [
     HomeComponent,
+    FilterPipe,
+    FilterPetsPipe,
   ],
   exports: [
     HomeComponent,
+    FilterPipe,
+    FilterPetsPipe,
   ],
 })
 export class HomeModule { }

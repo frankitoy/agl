@@ -7,4 +7,3 @@ export interface Application {
   name: string;
   pets: Pet[];
 }
-
