@@ -1,9 +1,10 @@
+import { Gender } from '../constants/gender.enum';
 import { Pet } from './pets.model';
 
 export interface Application {
-  name: string;
-  gender: string;
   age: number;
+  gender: Gender;
+  name: string;
   pets: Pet[];
 }
 

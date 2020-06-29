@@ -1,15 +1,6 @@
 {
   "name": "agl",
-  "version": "0.0.1",
-  "license": "MIT",
-  "author": "Franklin Marcelo",
-  "email": "frankitoy@gmail.com",
-  "description": "angular",
-  "homepage": "https://github.com/frankitoy/agl",
-  "repository": "https://github.com/frankitoy/agl.git",
-  "keywords": [
-    "angular"
-  ],
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=1234 --open",
@@ -24,7 +15,6 @@
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
     "@angular/core": "~9.1.0",
-    "@angular/forms": "~9.1.0",
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
@@ -45,7 +35,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.5",
+    "@angular-devkit/build-angular": "~0.901.9",
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",
     "@angular/language-service": "~9.1.0",

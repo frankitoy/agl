@@ -15,6 +15,7 @@ export const applicationInitialState: ApplicationState = {
   isSyncing: false,
 };
 
+// tslint:disable-next-line:variable-name
 const _applicationReducer = createReducer(
   applicationInitialState,
 

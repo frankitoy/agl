@@ -1,4 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClientJsonpModule,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +28,7 @@ import { applicationReducer } from './store/application.reducer';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     // external - store
     StoreModule.forRoot({
       [applicationFeatureKey]: applicationReducer,
@@ -31,14 +36,9 @@ import { applicationReducer } from './store/application.reducer';
     EffectsModule.forRoot([ApplicationEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
-  providers: [ApplicationService],
+  providers: [
+    ApplicationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-/*
-applicationFeatureKey
-    StoreModule.forFeature(applicationFeatureKey, applicationReducer),
-    EffectsModule.forFeature([ApplicationEffects]),
- */

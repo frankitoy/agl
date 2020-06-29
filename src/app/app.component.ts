@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
   constructor(private store: Store) { }
 
   public ngOnInit(): void {
-    // this.store.dispatch(ApplicationActions.fetchApplication);
+    this.store.dispatch(ApplicationActions.fetchApplication());
   }
 }
