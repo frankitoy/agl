@@ -13,7 +13,7 @@ import { ApplicationActions } from './store/application.actions';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private store: Store) { }
+  constructor(private readonly store: Store) { }
 
   public ngOnInit(): void {
     this.store.dispatch(ApplicationActions.fetchApplication());
