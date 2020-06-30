@@ -1,6 +1,7 @@
 import {
   async,
   TestBed,
+  ComponentFixture,
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
@@ -8,8 +9,11 @@ import {
   provideMockStore,
 } from '@ngrx/store/testing';
 import { AppComponent } from './app.component';
+import { ApplicationActions } from './store/application.actions';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
   let mockStore: MockStore;
 
   beforeEach(async(() => {
@@ -21,7 +25,7 @@ describe('AppComponent', () => {
         provideMockStore({
           initialState: [],
         }),
-      ]
+      ],
       declarations: [
         AppComponent,
       ],
@@ -30,23 +34,21 @@ describe('AppComponent', () => {
     mockStore = TestBed.inject(MockStore);
   }));
 
-  it('should create the app', () => {
-    spyOn(mockStore, 'dispatch');
-    mockStore.setState({
-      router: {
-        state: {
-          root: {
-            queryParams: {
-              sopNumber: '0',
-            },
-          },
-        },
-      },
-    });
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+  });
 
-    expect(mockStore.dispatch).toHaveBeenCalledWith(ApplicationActions.fetchApplication());
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
+  describe('ngOnInit', () => {
+    it('should initiate the dispatch event to fetch application', () => {
+      spyOn(mockStore, 'dispatch');
+      component.ngOnInit();
+
+      expect(mockStore.dispatch).toHaveBeenCalledWith(ApplicationActions.fetchApplication());
+    });
   });
 });
