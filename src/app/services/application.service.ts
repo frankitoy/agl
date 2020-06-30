@@ -5,8 +5,8 @@ import {
   of,
 } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Application } from '../models/index';
 import { environment } from 'src/environments/environment';
+import { Application } from '../models/index';
 
 @Injectable()
 export class ApplicationService {
@@ -15,7 +15,7 @@ export class ApplicationService {
 
   public getPets(): Observable<Array<Application>> {
     return this.httpClient.get<Array<Application>>(environment.url).pipe(
-      catchError(error => of(error)),
+      catchError(() => of([])),
     );
   }
 

@@ -40,3 +40,9 @@ Start your local app with:
 ```
 npm run start
 ```
+
+## Running unit tests
+```
+npm run test
+```
+

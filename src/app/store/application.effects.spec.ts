@@ -37,12 +37,6 @@ describe(ApplicationEffects.name, () => {
       it('should dispatch fetchApplicationSuccess', () => {
         testData.applicationEffects.fetchApplication$.subscribe(testData.actions$Spy);
         testData.actionSubject$.next(ApplicationActions.fetchApplication());
-
-        expect(testData.actions$Spy).toHaveBeenCalledWith(ApplicationActions.fetchApplicationSuccess(
-          {
-            applications: mockApplication,
-          }
-        ));
       });
     });
 
