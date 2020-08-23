@@ -1,4 +1,4 @@
 export const environment = {
-  url: 'http://agl-developer-test.azurewebsites.net/people.json',
+  url: 'https://agl-developer-test.azurewebsites.net/people.json',
   production: true,
 };
