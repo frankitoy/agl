@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  url: 'https://agl-developer-test.azurewebsites.net/people.json',
-  production: false
-};
+  url: 'http://agl-developer-test.azurewebsites.net/people.json',
+  production: false,
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

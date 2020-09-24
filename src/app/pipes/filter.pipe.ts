@@ -9,7 +9,6 @@ import { Application } from '../models/application.model';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-
   transform(applications: Array<Application>): any {
     return applications.filter(application => !!application.pets && application.pets.some(pet => pet.type === Pet.CAT));
   }

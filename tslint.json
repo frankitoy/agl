@@ -1,5 +1,10 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "tslint-etc",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -28,8 +33,8 @@
     "interface-name": false,
     "max-classes-per-file": false,
     "max-line-length": [
-      true,
-      140
+      false,
+      90
     ],
     "member-access": false,
     "member-ordering": [
@@ -69,7 +74,8 @@
     "ordered-imports": false,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape"
     ],
     "trailing-comma": false,
     "no-conflicting-lifecycle": true,
@@ -83,7 +89,13 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "no-unused-declaration": true,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "prettier": true
   },
   "rulesDirectory": [
     "codelyzer"
