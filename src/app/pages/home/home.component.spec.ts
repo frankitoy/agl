@@ -1,37 +1,27 @@
 import {
   async,
-  TestBed,
   ComponentFixture,
+  TestBed,
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import {
-  MockStore,
-  provideMockStore,
-} from '@ngrx/store/testing';
-import { ApplicationActions } from '../../store/application.actions';
+import { provideMockStore } from '@ngrx/store/testing';
+
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let mockStore: MockStore;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-      ],
+      imports: [RouterTestingModule],
       providers: [
         provideMockStore({
           initialState: [],
         }),
       ],
-      declarations: [
-        HomeComponent,
-      ],
+      declarations: [HomeComponent],
     }).compileComponents();
-
-    mockStore = TestBed.inject(MockStore);
   }));
 
   beforeEach(() => {

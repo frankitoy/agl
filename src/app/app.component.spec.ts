@@ -1,13 +1,14 @@
 import {
-  async,
-  TestBed,
   ComponentFixture,
+  TestBed,
+  async,
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
   MockStore,
   provideMockStore,
 } from '@ngrx/store/testing';
+
 import { AppComponent } from './app.component';
 import { ApplicationActions } from './store/application.actions';
 
@@ -18,17 +19,13 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-      ],
+      imports: [RouterTestingModule],
       providers: [
         provideMockStore({
           initialState: [],
         }),
       ],
-      declarations: [
-        AppComponent,
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
 
     mockStore = TestBed.inject(MockStore);

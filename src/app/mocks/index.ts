@@ -85,6 +85,4 @@ const mockApplication = [
   },
 ];
 
-export {
-  mockApplication,
-};
+export { mockApplication };

@@ -11,10 +11,8 @@ import { ApplicationSelectors } from 'src/app/store/application.selectors';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-
   public readonly application$ = this.store.select(ApplicationSelectors.applications);
   public readonly isSyncing$ = this.store.select(ApplicationSelectors.isSyncing);
 
-  constructor(private readonly store: Store) { }
-
+  constructor(private readonly store: Store) {}
 }

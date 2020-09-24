@@ -1,13 +1,15 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-etc",
-    "tslint-config-prettier",
-    "tslint-plugin-prettier"
-  ],
   "rules": {
     "array-type": false,
+    "arrow-return-shorthand": true,
     "arrow-parens": false,
+    "callable-types": true,
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "curly": true,
     "deprecation": {
       "severity": "warning"
     },
@@ -26,15 +28,23 @@
       "agl",
       "kebab-case"
     ],
+    "eofline": true,
+    "forin": true,
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
+    "import-spacing": true,
+    "indent": [
+      true,
+      "spaces"
+    ],
     "interface-name": false,
-    "max-classes-per-file": false,
+    "interface-over-type-literal": true,
+    "label-position": true,
     "max-line-length": [
-      false,
-      90
+      true,
+      140
     ],
     "member-access": false,
     "member-ordering": [
@@ -48,7 +58,7 @@
         ]
       }
     ],
-    "no-consecutive-blank-lines": false,
+    "no-conflicting-lifecycle": true,
     "no-console": [
       true,
       "debug",
@@ -57,43 +67,102 @@
       "timeEnd",
       "trace"
     ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-super": true,
     "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
+    "no-host-metadata-property": true,
     "no-inferrable-types": [
       true,
-      "ignore-params"
+      "ignore-params",
+      "ignore-properties"
     ],
+    "no-input-rename": false,
+    "no-misused-new": true,
+    "no-inputs-metadata-property": true,
     "no-non-null-assertion": true,
+    "no-output-native": true,
+    "no-output-on-prefix": true,
+    "no-output-rename": true,
+    "no-outputs-metadata-property": true,
     "no-redundant-jsdoc": true,
+    "no-shadowed-variable": true,
+    "no-string-throw": true,
     "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": true,
+    "no-unnecessary-initializer": true,
+    "no-unused-declaration": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
     "no-var-requires": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "ordered-imports": true,
+    "prefer-const": true,
+    "prefer-readonly": true,
     "quotemark": [
       true,
       "single",
       "avoid-escape"
     ],
-    "trailing-comma": false,
-    "no-conflicting-lifecycle": true,
-    "no-host-metadata-property": true,
-    "no-input-rename": true,
-    "no-inputs-metadata-property": true,
-    "no-output-native": true,
-    "no-output-on-prefix": true,
-    "no-output-rename": true,
-    "no-outputs-metadata-property": true,
     "template-banana-in-box": true,
     "template-no-negated-async": true,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "arrays": "always",
+          "exports": "always",
+          "functions": "always",
+          "imports": "always",
+          "objects": "always",
+          "typeLiterals": "ignore"
+        },
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "unified-signatures": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
-    "no-unused-declaration": true,
+    "variable-name": false,
     "semicolon": [
       true,
-      "never"
+      "always"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
     ],
     "prettier": true
   },

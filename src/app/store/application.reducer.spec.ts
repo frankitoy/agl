@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+
 import { mockApplication } from '../mocks/index';
 import { ApplicationActions } from './application.actions';
 import {
