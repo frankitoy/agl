@@ -1,7 +1,5 @@
-import {
-  Pipe,
-  PipeTransform,
-} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+
 import { Pet } from '../constants/pet.enum';
 import { Application } from '../models/application.model';
 

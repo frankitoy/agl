@@ -2,6 +2,7 @@ import {
   Pipe,
   PipeTransform,
 } from '@angular/core';
+
 import { Pet } from '../constants/pet.enum';
 import { Pet as PetType } from '../models/pets.model';
 

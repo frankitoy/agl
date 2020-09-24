@@ -5,7 +5,7 @@
 export const environment = {
   url: 'http://agl-developer-test.azurewebsites.net/people.json',
   production: false,
-}
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

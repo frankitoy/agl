@@ -1,9 +1,10 @@
 import {
-  Component,
   ChangeDetectionStrategy,
+  Component,
   OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
+
 import { ApplicationActions } from './store/application.actions';
 
 @Component({
@@ -12,8 +13,7 @@ import { ApplicationActions } from './store/application.actions';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-
-  constructor(private readonly store: Store) { }
+  constructor(private readonly store: Store) {}
 
   public ngOnInit(): void {
     this.store.dispatch(ApplicationActions.fetchApplication());

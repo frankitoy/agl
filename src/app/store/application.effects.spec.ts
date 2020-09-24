@@ -9,6 +9,7 @@ import {
   provideMockStore,
 } from '@ngrx/store/testing';
 import { Subject } from 'rxjs';
+
 import { mockApplication } from '../mocks/index';
 import { Application } from '../models/application.model';
 import { ApplicationService } from '../services/application.service';
@@ -24,13 +25,12 @@ import {
 } from './application.selectors';
 
 describe(ApplicationEffects.name, () => {
-
   let testData: any;
   let applicationServiceMockObj: jasmine.SpyObj<ApplicationService>;
 
   beforeEach(mockTestBed);
 
-  afterEach(() => testData = null);
+  afterEach(() => (testData = null));
 
   describe('fetchApplication$', () => {
     describe('when fetch simple application is successful', () => {
@@ -56,17 +56,12 @@ describe(ApplicationEffects.name, () => {
   function mockTestBed(): void {
     const actionSubject$: Subject<Action> = new Subject();
     const applicationResponseSubject$: Subject<Array<Application>> = new Subject();
-    applicationServiceMockObj = jasmine.createSpyObj<ApplicationService>([
-      'getPets',
-    ]);
+    applicationServiceMockObj = jasmine.createSpyObj<ApplicationService>(['getPets']);
 
     applicationServiceMockObj.getPets.and.returnValue(applicationResponseSubject$.asObservable() as any);
 
     TestBed.configureTestingModule({
-      imports: [
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(applicationFeatureKey, applicationReducer),
-      ],
+      imports: [StoreModule.forRoot({}), StoreModule.forFeature(applicationFeatureKey, applicationReducer)],
       providers: [
         provideMockActions(() => actionSubject$.asObservable()),
         provideMockStore({

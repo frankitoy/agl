@@ -19,30 +19,21 @@ export const applicationInitialState: ApplicationState = {
 const _applicationReducer = createReducer(
   applicationInitialState,
 
-  on(
-    ApplicationActions.fetchApplication,
-    state => {
-      state.isSyncing = true;
-      return state;
-    },
-  ),
+  on(ApplicationActions.fetchApplication, state => {
+    state.isSyncing = true;
+    return state;
+  }),
 
-  on(
-    ApplicationActions.fetchApplicationSuccess,
-    (state, { applications }) => {
-      state.applications = applications;
-      state.isSyncing = false;
-      return state;
-    },
-  ),
+  on(ApplicationActions.fetchApplicationSuccess, (state, { applications }) => {
+    state.applications = applications;
+    state.isSyncing = false;
+    return state;
+  }),
 
-  on(
-    ApplicationActions.fetchApplicationError,
-    state => {
-      state.isSyncing = false;
-      return state;
-    },
-  ),
+  on(ApplicationActions.fetchApplicationError, state => {
+    state.isSyncing = false;
+    return state;
+  })
 );
 
 export function applicationReducer(state: ApplicationState, action: Action): ApplicationState {
