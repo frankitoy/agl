@@ -6,7 +6,6 @@ import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
-// @ts-ignore
 @NgModule({
   imports: [CommonModule, HomeRoutingModule],
   declarations: [FilterPipe, FilterPetsPipe, HomeComponent],
