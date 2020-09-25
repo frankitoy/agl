@@ -1,11 +1,12 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "Debug npm start with Chrome",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:5000/#",
+      "url": "http://localhost:1234",
       "webRoot": "${workspaceRoot}",
       "runtimeArgs": [
         "--remote-debugging-port=9222"
@@ -17,7 +18,7 @@
       "name": "Debug npm start with Edge",
       "type": "edge",
       "request": "launch",
-      "url": "http://localhost:5000/#",
+      "url": "http://localhost:1234",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "preLaunchTask": "npm: start"

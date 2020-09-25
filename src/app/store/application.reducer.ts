@@ -7,6 +7,7 @@ import {
   enableES5,
   produce,
 } from 'immer';
+
 import { ApplicationActions } from './application.actions';
 import { ApplicationState } from './application.state';
 
@@ -33,7 +34,7 @@ const _applicationReducer = createReducer(
   on(ApplicationActions.fetchApplicationError, state => {
     state.isSyncing = false;
     return state;
-  })
+  }),
 );
 
 export function applicationReducer(state: ApplicationState, action: Action): ApplicationState {
