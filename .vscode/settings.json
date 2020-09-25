@@ -1,5 +1,10 @@
 {
-  "cSpell.words": ["codelyzer"],
+  "cSpell.words": [
+    "codelyzer",
+    "debugmessage",
+    "postdocker",
+    "taillogs"
+  ],
   "debug.openExplorerOnEnd": true,
   "editor.tabSize": 2,
   "editor.rulers": [140],

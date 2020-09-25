@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=1234 --open",
-    "build": "ng build --prod",
-    "test": "ng test --code-coverage",
+    "build:prod": "ng build --prod",
+    "test:coverage": "ng test --code-coverage",
     "lint": "run-p lint:ts lint:tsc",
     "lint:fix": "run-s lint:ts:fix lint:tsc",
     "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\"",
