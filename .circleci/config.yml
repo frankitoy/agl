@@ -4,8 +4,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:lts-browsers
-        environment:
-          - CHROME_BIN=/usr/bin/google-chrome
     working_directory: ~/repo
     steps:
       - checkout
@@ -13,6 +11,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm ci
+      - run: export CHROME_BIN=/usr/bin/google-chrome
       # force update the webdriver
       - run: cd ./node_modules/protractor && npm i webdrivermanager@latest
       # because we use "npm ci" to install NPM dependencies
