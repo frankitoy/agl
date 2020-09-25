@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Tar & Gzip compiled app
-          command: tar zcf dist.tar.gz dist/ch4
+          command: tar zcf dist.tar.gz dist/agl
       - store_artifacts:
           path: dist.tar.gz
 workflows:
