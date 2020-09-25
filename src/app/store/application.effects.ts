@@ -20,8 +20,8 @@ export class ApplicationEffects {
       ofType(ApplicationActions.fetchApplication),
       switchMap(() => this.applicationService.getPets()),
       switchMap(applications => of(ApplicationActions.fetchApplicationSuccess({ applications }))),
-      catchError(() => of(ApplicationActions.fetchApplicationError()))
-    )
+      catchError(() => of(ApplicationActions.fetchApplicationError())),
+    ),
   );
 
   constructor(private readonly actions$: Actions, private readonly applicationService: ApplicationService) {}

@@ -20,8 +20,8 @@ import {
   applicationReducer,
 } from './application.reducer';
 import {
-  applicationFeatureKey,
   ApplicationSelectors,
+  applicationFeatureKey,
 } from './application.selectors';
 
 describe(ApplicationEffects.name, () => {
