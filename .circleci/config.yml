@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:lts-browsers
-      environment:
+        environment:
           - CHROME_BIN=/usr/bin/google-chrome
     working_directory: ~/repo
     steps:
