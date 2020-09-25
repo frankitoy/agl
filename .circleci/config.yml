@@ -1,7 +1,5 @@
 .circleci/config.yml
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
 jobs:
   build:
     docker:
@@ -13,7 +11,6 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm ci
-      - run: export CHROME_BIN=/usr/bin/google-chrome
       # force update the webdriver
       - run: cd ./node_modules/protractor && npm i webdrivermanager@latest
       # because we use "npm ci" to install NPM dependencies
@@ -25,17 +22,14 @@ jobs:
       - run: npm run style
       - run: npm run lint
       - run: npm run build:prod
-      - run: npm run test:coverage -- --watch=false
-      # - run: npm run e2e
+      # - run: npm run test:coverage -- --watch=false
       - run:
           name: Tar & Gzip compiled app
           command: tar zcf dist.tar.gz dist/agl
       - store_artifacts:
           path: dist.tar.gz
 workflows:
-  node-tests:
   version: 2
   build-and-test:
     jobs:
-      - node/test
       - build
