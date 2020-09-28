@@ -1,5 +1,8 @@
 # AGL
 
+[![frankitoy](https://circleci.com/gh/frankitoy/agl.svg?style=svg)](<https://agl.vercel.app/>)
+
+
 ## Getting Started
 
 `npm install && npm start` to boot up the component library showcase app, [which can be accessed on localhost:1234](http://localhost:1234).
